@@ -1,0 +1,65 @@
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Gelion;
+    src: url(assets/font.woff);
+}
+
+:root{
+    --color-background-gray:#23191D;
+}
+
+body{
+    font-family: Gelion;
+}
+
+.ant-btn{
+    border-radius: 4px;
+}
+
+
+.ant-message-notice-content{
+    background-color: rgb(0,0,0,0.25);
+    border-radius: 12px;
+    border:1px solid var(--primary-color);
+    backdrop-filter: blur(20px);
+}
+
+.ant-popover-inner{
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px !important;
+    .ant-popover-message-title {
+        color:black;
+    }
+
+    .ant-btn{
+        color:black;
+    }
+
+    .ant-btn-primary{
+        color:white;
+    }
+}
+
+.ant-popover-arrow-content::before{
+    background-color: var(--primary-color);
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: transparent;
+
+    &.active{
+        background-color: #FF32BB!important;
+    }
+}
+
+
+.ant-menu-item.active{
+    background-color: #FF32BB!important;
+}
+
+.ant-menu-item:hover{
+    background-color: #FF32BB!important;
+}
+

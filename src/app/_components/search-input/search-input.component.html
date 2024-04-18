@@ -1,0 +1,14 @@
+<nz-input-group  [nzSuffix]="suffixIconSearch">
+    <input [(ngModel)]="value"  type="text" nz-input placeholder="Search..." (ngModelChange)="onInputChange($event)"  />
+</nz-input-group>
+<ng-template #suffixIconSearch> 
+    @if(loading){
+        <span nz-icon nzType="loading" nzTheme="outline"></span>
+    }@else{
+        @if(value.length < 1){
+            <span  nz-icon nzType="search"></span>
+        }@else {
+            <span (click)="reset()" nz-icon nzType="close" nzTheme="outline" style="color:var(--primary-color)"></span>
+        }
+    }
+</ng-template>

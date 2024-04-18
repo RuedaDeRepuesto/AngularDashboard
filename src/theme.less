@@ -1,0 +1,25 @@
+
+// Custom Theming for NG-ZORRO
+// For more information: https://ng.ant.design/docs/customize-theme/en
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.dark.less";
+
+// Override less variables to here
+// View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
+
+@primary-color: #FF32BB;
+@primary-color-hover: color(~`colorPalette('@{primary-color}', 5) `);
+
+@processing-color: #FF32BB;
+@success-color:#9CD850;
+@error-color:#DE3730;
+@warning-color:#F89807;
+
+@popover-background:#050505;
+@border-color-base:#504349;
+
+
+@table-bg:#ffffff05;
+
+:root{
+    --primary-color:@primary-color;
+}

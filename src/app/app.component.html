@@ -1,0 +1,31 @@
+
+
+
+<nz-layout class="layout">
+  <nz-sider [nzCollapsible]="true" [nzBreakpoint]="'lg'" [nzCollapsedWidth]="0">
+    <div class="logo">
+      <img src="https://placehold.co/400x100?text=Logo+here" alt="Golazo Training Logo" srcset="">
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item routerLinkActive="active" routerLink="/home">
+        <span nz-icon nzType="home"></span>
+        <span>Home</span>
+      </li>
+      <li nz-menu-item routerLink="/account" routerLinkActive="active">
+        <span nz-icon nzType="profile"></span>
+        <span>Table</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout class="right-layout">
+    <golazo-header
+      [title]="currentRouterName"
+    />
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet />
+      </div>
+    </nz-content>
+    <nz-footer>{{productName}} - {{footerText}}<br>&copy; {{productName}} {{getYear()}}</nz-footer>
+  </nz-layout>
+</nz-layout>

@@ -1,0 +1,51 @@
+.logo {
+    width: 100%;
+    img{
+        width: 100%;
+    }
+  }
+
+  .layout {
+    min-height: 100vh;
+  }
+
+  nz-sider {
+    z-index: 999;
+    overflow: auto;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    border-right:1px solid #504349;
+  }
+
+  .right-layout {
+    margin-left: 200px;
+  }
+
+  nz-header {
+    padding: 0;
+  }
+
+  nz-content {
+    margin: 24px 16px 0;
+    overflow: initial;
+  }
+
+  .inner-content {
+    padding:8px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  nz-footer {
+    text-align: center;
+    font-size: 11px;
+  }
+
+
+
+  @media only screen and (max-width: 992px) {
+    .right-layout {
+      margin-left: 0px;
+    }  
+  }

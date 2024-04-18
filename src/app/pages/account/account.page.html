@@ -1,0 +1,52 @@
+<ng-template #operations>
+  <nz-space>
+    <search-input [loading]="searching" *nzSpaceItem (onSearch)="search($event)"></search-input>
+    <button *nzSpaceItem nz-button><span nz-icon nzType="plus" nzTheme="outline"></span> New</button>
+  </nz-space>
+  
+</ng-template>
+
+<nz-table [nzScroll]="{x: 'true'}" #basicTable [nzHideOnSinglePage]="true" [nzBordered]="true" [nzPageSize]="12" nzSize="small" [nzData]="dataSet">
+    <thead>
+      <tr>
+        <th nzLeft [nzSortFn]="'name'|sortFn">Name</th>
+        <th [nzSortFn]="'age'|sortFn">Age</th>
+        <th [nzSortFn]="'address'|sortFn">Address</th>
+        <th nzRight>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{data.name}}</td>
+        <td nzEllipsis>{{data.age}}</td>
+        <td nzEllipsis>{{data.address}}</td>
+        <td nzRight>
+            <nz-space>
+                <button *nzSpaceItem nz-button nzSize="small">
+                  <span nz-icon nzType="eye" nzTheme="outline"></span>
+                  <span nzButtonText>View</span>
+                </button>
+
+                <button *nzSpaceItem nz-button nzSize="small">
+                  <span nz-icon nzType="edit" nzTheme="outline"></span>
+                  <span nzButtonText>Edit</span>
+                </button>
+                
+                <button *nzSpaceItem
+                 nz-tooltip
+                 nzTooltipTitle="Delete this register"
+                 nzTooltipColor="var(--primary-color)"
+                 nz-button
+                 nzDanger 
+                 nz-popconfirm 
+                 nzPopconfirmTitle="Are you sure to delete {{data.name}}, this is irreversible"
+                 nzSize="small"
+                 (click)="selected=data" [nzBeforeConfirm]="deleteRow" (nzOnConfirm)="confirm()">
+                 <span nz-icon nzType="delete"></span>
+                 <span nzButtonText>Delete</span>
+                </button>
+            </nz-space>
+        </td>
+      </tr>
+    </tbody>
+</nz-table>
