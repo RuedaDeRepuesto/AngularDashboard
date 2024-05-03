@@ -1,0 +1,39 @@
+@for (i of formEntries; track $index) {
+    @if(i.type == 'text'){
+        <div class="form-entry">
+            <nz-input-group nzAddOnBefore="{{i.name}}">
+              <input type="text" nz-input [(ngModel)]="i.value" />
+            </nz-input-group>
+        </div>
+    }
+
+    @if(i.type == 'ComplexText' ){
+        <div class="form-entry">
+            <nz-input-group nzAddOnBefore="{{i.name}}">
+                <input (blur)="blurInput($event,i.obj.getType())" [type]="i.obj.getType()"  [pattern]="i.obj.pattern" nz-input [(ngModel)]="i.value" />
+              
+            </nz-input-group>
+        </div>
+    }
+
+    @if(i.type == 'select'){
+        <div class="form-entry">
+            <nz-input-group nzAddOnBefore="{{i.name}}">
+                <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select a person" [(ngModel)]="i.value">
+                    @for (o of i.options; track $index) {
+                        <nz-option [nzLabel]="o.text" [nzValue]="o.value"></nz-option>
+                    }
+                  </nz-select>
+            </nz-input-group>
+        </div>
+    }
+
+    @if(i.type == 'date'){
+        <div class="form-entry labeled">
+            <span class="label">{{i.name}}</span>
+            <nz-date-picker [(ngModel)]="i.value" ></nz-date-picker>
+
+        </div>
+    }
+    
+}

@@ -1,0 +1,32 @@
+.form-entry{
+    margin-bottom: 12px;
+
+    &.labeled{
+        display: flex;
+
+        nz-date-picker{
+            width: 60%;
+        }
+
+        span.label{
+            width: 40%;
+            padding: 0 11px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: normal;
+            font-size: 14px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid #504349;
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-right: none;
+        }
+    }
+}
+
+nz-select {
+    width: 100%;
+}

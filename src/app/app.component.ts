@@ -11,7 +11,7 @@ import { HeaderComponent } from './_components/header/header.component';
   imports: [
     RouterOutlet,
     GolazoModule,
-    HeaderComponent
+    HeaderComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

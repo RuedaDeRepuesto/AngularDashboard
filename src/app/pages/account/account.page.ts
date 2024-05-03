@@ -6,6 +6,7 @@ import { lastValueFrom, timer } from 'rxjs';
 import { NzTableComponent, NzTableFilterFn, NzTableSortFn } from 'ng-zorro-antd/table';
 import { SearchInputComponent } from '../../_components/search-input/search-input.component';
 import { ArrayUtils } from '../../utils/extensions/ArrayExtenesions';
+import { ComplexText, DatePickInput } from '../../_formTypes/form.types';
 
 @Component({
   selector: 'app-account',
@@ -66,6 +67,28 @@ export class AccountPage implements OnInit,AfterViewInit {
     }
   
     return dataSet;
+  }
+
+  async add(){
+    this.helper.showFormModal({title:'Agregar usuario',ok:'Agregar',cancel:'Cancelar'},{
+      nombre:'Test name',
+      email: new ComplexText('','email'),
+      numeroTelefono:new ComplexText('','tel'),
+      fechaNacimiento:new DatePickInput(new Date()),
+      rol:{
+        id:null,
+        text:'Seleccionr',
+        getAll:()=> {
+          return [{
+            value:1,
+            text:'Admin'
+          },{
+              value:2,
+              text:'Alumno'
+          }]
+        }
+      }
+    });
   }
 
 

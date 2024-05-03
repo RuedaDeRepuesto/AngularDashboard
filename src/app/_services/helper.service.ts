@@ -1,6 +1,8 @@
-import { ContentChild, Injectable, TemplateRef, ViewChild, inject } from '@angular/core';
+import { ContentChild, Injectable, TemplateRef, Type, ViewChild, inject } from '@angular/core';
 import { EventType, NavigationEnd, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { FormModalComponent } from '../_components/form-modal/form-modal.component';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +24,7 @@ export class HelperService {
     this._operationsTemplateRef = value;
   }
   
-  constructor() {
+  constructor(private modalSrv:NzModalService) {
     this.router.events.subscribe(e =>{
       if(e.type == EventType.NavigationEnd){
         if(!this.goingBack){
@@ -60,6 +62,20 @@ export class HelperService {
     })
 
     return toast;
+  }
+
+  async showFormModal(modal:{title:string,ok:string,cancel:string},formData:any){
+    const modalResult = this.modalSrv.create({
+      nzTitle: modal.title,
+      nzContent: FormModalComponent,
+      nzClosable: true,
+      nzOkText:modal.ok,
+      nzCancelText:modal.cancel,
+      nzData:{
+        formData:formData
+      },
+      nzOnOk: () => new Promise(resolve => setTimeout(resolve, 1000))
+    });
   }
   
 }

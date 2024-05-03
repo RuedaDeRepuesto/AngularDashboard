@@ -1,7 +1,7 @@
 <ng-template #operations>
   <nz-space>
     <search-input [loading]="searching" *nzSpaceItem (onSearch)="search($event)"></search-input>
-    <button *nzSpaceItem nz-button><span nz-icon nzType="plus" nzTheme="outline"></span> New</button>
+    <button *nzSpaceItem nz-button (click)="add()"><span nz-icon nzType="plus" nzTheme="outline"></span> New</button>
   </nz-space>
   
 </ng-template>

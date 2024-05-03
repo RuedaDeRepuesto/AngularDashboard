@@ -21,6 +21,9 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { SearchInputComponent } from '../_components/search-input/search-input.component';
 import { NzButtonTextDirective } from '../utils/directives/nz-button-text.directive';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 
 
 @NgModule({
@@ -46,7 +49,10 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     SortFnPipe,
     NzInputModule,
     NzButtonTextDirective,
-    NzToolTipModule
+    NzToolTipModule,
+    NzModalModule,
+    NzSelectModule,
+    NzDatePickerModule
   ],
   exports:[
     NzLayoutModule,
@@ -68,7 +74,9 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     SortFnPipe,
     NzInputModule,
     NzButtonTextDirective,
-    NzToolTipModule
+    NzToolTipModule,
+    NzSelectModule,
+    NzDatePickerModule
   ]
 })
 export class GolazoModule { }
